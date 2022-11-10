@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<style>
+    #nav{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        
+    }
+    
+    #nav>h1{
+        color: cornflowerblue;
+    }
+    #nav>h2>a{
+        color: black;
+        text-decoration: none;
+    }
+    #info{
+        width: 100%;
+        height: 50px;
+        background-color: darkviolet;
+    }
+    #info>div{
+        width: 70%;
+        margin: auto;
+        align-items: center;
+    }
+    #info>div>h4{
+        align-items: center;
+        color: white;
+    }
+    #in{
+        height: 500px;
+        width: 500px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 10px;
+    }
+    #in>div{
+        text-align: center;
+    }
+    #in>div>h2{
+        margin-top: 0px;
+    }
+    div>form>input{
+            height: 40px;
+            width: 400px;          
+        }
+        div>form>p{
+            margin-top: 40px;
+        }
+        div>button{
+            height: 50px;
+            width: 400px;
+            border-radius: 5px;
+            margin-top: 70px;
+            background-color: darkviolet;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 20px;
+        }
+        #bottom{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        background-color: gainsboro;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 50px;
+        }
+        #bottom>p{
+            color: darkorchid;
+        }
+</style>
+<body>
+    <div id="log">
+        <div>
+            <div id="nav">
+                <h1>YourFitness</h1>
+                <h2><a href="Signup.html">Sign Up</a></h2>
+            </div>
+            <div id="info">
+                <div>
+                    <h4>ABOUT &emsp; FOOD &emsp; EXERCISE &emsp; COMMUNITY &emsp; BOLG &emsp; PRIMIUM</h4>
+                </div>
+            </div>
+            <div id="in">
+                <div>
+                    <h2>Member Login</h2>
+                    <form id="form">
+            
+                        <p></p>
+                        <input id="email" type="text" placeholder="Enter email">
+            
+                        <p></p>
+                        <input id="pass" type="text" placeholder="Enter password" >
+                    </form>
+                    
+            
+                    <button>Log In</button>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            
+            <P>Calorie &nbsp; &nbsp; Counter &nbsp; &nbsp; Blog &nbsp; &nbsp; Terms &nbsp; &nbsp; Privacy &nbsp; &nbsp; Contact Us &nbsp; &nbsp; API &nbsp; &nbsp; Jobs &nbsp; &nbsp; Feedback &nbsp; &nbsp; Community &nbsp; &nbsp; Guidlines</P>
+            <p>Ad Choices &nbsp; &nbsp; Do Not Sell &nbsp; &nbsp; My Personal information</p>
+            <h4>@ 2022 YourFitness, Inc.</h4>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let LoginData = JSON.parse(localStorage.getItem("LoginData"))
+    document.querySelector("button").addEventListener("click", Log)
+
+    function Log(){
+        let count = 0;
+        LoginData.forEach((elem)=>{
+            if(document.getElementById("email").value == elem.em && document.getElementById("pass").value == elem.pas){
+                count++
+            }
+        
+        })
+        if(count>0){
+            alert("Login Sucssessfull")
+        }
+        else{
+            alert("Please Fill Correct Info")
+        }
+    }
+   
+</script>

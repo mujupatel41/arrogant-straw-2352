@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<style>
+    h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 30px;
+        }
+        div{
+            text-align: center;
+            margin: auto;
+            height: 600px;
+            width: 530px;
+            background-color: white;
+            border-radius: 18px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-top: 60px;
+        }
+        div>h2{
+            text-align: center;
+        }
+        div>form>input{
+            height: 40px;
+            width: 400px;          
+        }
+        div>form>p{
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+        div>button{
+            height: 50px;
+            width: 400px;
+            border-radius: 5px;
+            margin-top: 70px;
+            background-color: darkviolet;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        #bottom{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        background-color: gainsboro;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 50px;
+        }
+        #bottom>p{
+            color: darkorchid;
+        }
+        
+</style>
+<body>
+    <div> 
+        <h2>SignUp</h2>
+        <form id="form">
+            <p></p>
+            <input id="name" type="text" placeholder="Enter your full name">
+
+            <p></p>
+            <input id="email" type="text" placeholder="Enter email">
+
+            <p></p>
+            <input id="pass" type="text" placeholder="Enter password" >
+        </form>
+        
+
+        <button>SingUp</button>
+        <h2>Already have an account? <a href="Log.html">Login</a></h2>
+        
+    </div>
+    <div id="bottom">
+            
+        <P>Calorie &nbsp; &nbsp; Counter &nbsp; &nbsp; Blog &nbsp; &nbsp; Terms &nbsp; &nbsp; Privacy &nbsp; &nbsp; Contact Us &nbsp; &nbsp; API &nbsp; &nbsp; Jobs &nbsp; &nbsp; Feedback &nbsp; &nbsp; Community &nbsp; &nbsp; Guidlines</P>
+        <p>Ad Choices &nbsp; &nbsp; Do Not Sell &nbsp; &nbsp; My Personal information</p>
+        <h4>@ 2022 YourFitness, Inc.</h4>
+    </div>
+</body>
+</html>
+<script>
+
+
+    let LoginData = JSON.parse(localStorage.getItem("LoginData")) || []
+
+    document.querySelector("button").addEventListener("click", SignUp)
+
+    function SignUp(event){
+        let na = document.getElementById("name").value;
+        let em = document.getElementById("email").value;
+        let pas = document.getElementById("pass").value;
+        
+        let obj = {
+            na,
+            em,
+            pas
+        }
+        if(obj.na=="" || obj.email=="" || obj.pas==""){
+            alert("Please fill all the details.")
+        }
+        else{
+            LoginData.push(obj)
+            localStorage.setItem("LoginData", JSON.stringify(LoginData))
+            alert("SignUp Successfull")
+        }
+    }
+</script>
