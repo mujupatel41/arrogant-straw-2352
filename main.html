@@ -98,6 +98,7 @@
     #child>div>img{
         height: 100%;
         width: 100%;
+        margin-left: 10px;
     }
     #container4>div>button{
         width: 400px;
@@ -199,7 +200,12 @@
         padding-top: 40px;
         padding-bottom: 40px;
         width: 100%;
-    }
+        }
+        #child>div>img{
+        height: 100%;
+        width: 90%;
+        margin-right: 10px;
+        }
         #container3>#c-child{
         display: grid;
         grid-template-columns: repeat(1,1fr);
@@ -215,6 +221,23 @@
         gap: 20px;
         margin-top: 30px;
         }
+        #container4>div>button{
+        width: 300px;
+        height: 50px;
+        background-color: rgb(167, 56, 223);
+        color: white;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        margin-top: 50px;
+        font-size: 15px;
+        }
+        #container1>div{
+            width: auto;
+        }
+        #container1>div>img{
+            width: 350px;
+        }
     } 
 
 </style>
@@ -229,7 +252,7 @@
             <p>Want to eat more mindfully? Track meals, learn about <br>
                  your habits, and reach your goals with YourFitness.
             </p>
-            <button>START FOR FREE</button>
+            <button class="btn">START FOR FREE</button>
         </div>
         <div>
             <img src="https://www.myfitnesspal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-slice%402x.e3eec8a8.png&w=1920&q=75" alt="">
@@ -292,7 +315,7 @@
                 <p>YourFitness gave me a <br> wake up call to the way I was <br> eating and made things clear <br> what I needed to change</p>
             </div>
         </div>
-        <div><button>START YOUR JOURNEY</button></div>
+        <div><button class="btn1">START YOUR JOURNEY</button></div>
     </div>
     <div id="container5">
         <div>
@@ -353,3 +376,14 @@
     </div>
 </body>
 </html>
+
+<script>
+    document.querySelector(".btn").addEventListener("click", Func);
+    function Func(){
+        window.open("Signup.html", "_top")
+    }
+    document.querySelector(".btn1").addEventListener("click", F2)
+    function F2(){
+        window.open("Signup.html", "_top")
+    }
+</script>
